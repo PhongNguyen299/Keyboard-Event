@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keyboard-Event</title>
+</head>
+<body>
+  <img id="nobita" src="https://upload.wikimedia.org/wikipedia/vi/2/2c/Nobita.png" style="position:absolute;left:0; top:0;" height="100" width="80"/>
+
+  <script>
+    const nobita = document.getElementById("nobita");
+
+    function upArrowPressed() {
+      nobita.style.top = parseInt(nobita.style.top) - 5 + 'px';
+    }
+
+    function downArrowPressed() {
+      nobita.style.top = parseInt(nobita.style.top) + 5 + 'px';
+    }
+
+    function leftArrowPressed() {
+      nobita.style.left = parseInt(nobita.style.left) - 5 + 'px';
+    }
+
+    function rightArrowPressed() {
+      nobita.style.left = parseInt(nobita.style.left) + 5 + 'px';
+    }
+
+    document.body.addEventListener('keydown', function moveSelection(e){
+        switch (e.key) {
+            case 'ArrowLeft':
+                leftArrowPressed();
+                break;
+            case "ArrowRight":
+                rightArrowPressed();
+                break;
+            case 'ArrowUp':
+                upArrowPressed();
+                break;
+            case 'ArrowDown':
+                downArrowPressed();
+                break;
+            }
+        }
+    );
+
+  </script>
+</body>
+</html>
